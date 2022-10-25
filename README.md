@@ -2,26 +2,26 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
 
-## Development server
+The main purpose of this project is to add practice examples for rxjs. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+I will also have some git uses that I've not practiced a lot, or properly so far in my career.
 
-## Code scaffolding
+## Covered Topics
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This list wil be updated continuously as I develop further features in it using rxjs. According to [Learn RXJS](https://www.learnrxjs.io/learn-rxjs/operators), there are 98 operators in RxJs, and we'll try to cover every single one.
 
-## Build
+## Testing
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+The goal is to utilize rxjs' all features to make sure the understanding of the developer is matured. The test will also be updated, with complete documentation on how to execute tests of a certain operator.
 
-## Running unit tests
+## Backend
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+We will be using [JSON Placeholder](https://jsonplaceholder.typicode.com/) API to test out
 
-## Running end-to-end tests
+## Project Structure
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+This will contain a side bar, which will be populated as we go.
 
-## Further help
+Main page will consist of a list view (table), with an add button, delete button, and so on.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+We will incorporate polling to fetch updated list every 1 minute as well.
