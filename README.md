@@ -9,6 +9,10 @@ I will also have some git uses that I've not practiced a lot, or properly so far
 ## Helpful Links
 1. [Progress Bar Explanation in detail](https://dev.to/ajitsinghkaler/rxjs-tutorials-progress-bar-ex-2-1-4np2)
 
+## Big Targets
+1. All kinds of mappings
+2. All kinds of major pipes
+
 ## Covered Topics
 
 This list wil be updated continuously as I develop further features in it using rxjs. According to [Learn RXJS](https://www.learnrxjs.io/learn-rxjs/operators), there are 98 operators in RxJs, and we'll try to cover every single one.

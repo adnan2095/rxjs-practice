@@ -15,64 +15,70 @@ export interface Post {
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  selectedOption: string = 'Dashboard'
   posts: Post[] = [];
   takeLimit = 50;
   constructor(public rxjsHttp: RxjsHttpService) { }
 
   ngOnInit(): void {
-    this.rxjsHttp.get('posts').pipe(
-      map((response: any) => {
-        return (response.response as Post[]).filter(post => {
-          return post.id <= 99;
-        });
-      }),
-    ).subscribe({
-      next: (response) => {
-        this.posts = response;
-        // this.rxjsOperation();
-        // this.ofPosts();
-        // this.startWith();
-      }
-    });
-    this.racingApis();
+    // this.rxjsHttp.get('posts').pipe(
+    //   map((response: any) => {
+    //     return (response.response as Post[]).filter(post => {
+    //       return post.id <= 99;
+    //     });
+    //   }),
+    // ).subscribe({
+    //   next: (response) => {
+    //     this.posts = response;
+    //     // this.rxjsOperation();
+    //     // this.ofPosts();
+    //     // this.startWith();
+    //   }
+    // });
+    // this.racingApis();
   }
 
-  rxjsOperation() {
-    const posts$ = from(this.posts);
-    posts$.pipe(
-      filter((post) => {
-        return post.id <= 40;
-      }),
-      take(this.takeLimit)
-    ).subscribe(posts => {
-      console.log('filter, take: ', posts);
-    });
+  switchView(newView: string) {
+    if (this.selectedOption !== newView) {
+      this.selectedOption = newView;
+    }
   }
 
-  ofPosts() {
-    const posts$ = of(this.posts);
-    posts$.subscribe(posts => {
-      console.log('of: ',posts);
-    })
-  }
+  // rxjsOperation() {
+  //   const posts$ = from(this.posts);
+  //   posts$.pipe(
+  //     filter((post) => {
+  //       return post.id <= 40;
+  //     }),
+  //     take(this.takeLimit)
+  //   ).subscribe(posts => {
+  //     console.log('filter, take: ', posts);
+  //   });
+  // }
 
-  startWith() {
-    const posts$ = from(this.posts);
-    posts$.pipe(
-      startWith({
-        id: 69696,
-        name: 'wowowowow'
-      })
-    ).subscribe(posts => {
-      console.log('startwith: ', posts);
-    })
-  }
+  // ofPosts() {
+  //   const posts$ = of(this.posts);
+  //   posts$.subscribe(posts => {
+  //     console.log('of: ',posts);
+  //   })
+  // }
 
-  racingApis() {
-    const posts$ = this.rxjsHttp.get('albums');
-    const comments$ = this.rxjsHttp.get('todos');
+  // startWith() {
+  //   const posts$ = from(this.posts);
+  //   posts$.pipe(
+  //     startWith({
+  //       id: 69696,
+  //       name: 'wowowowow'
+  //     })
+  //   ).subscribe(posts => {
+  //     console.log('startwith: ', posts);
+  //   })
+  // }
 
-    race(posts$, comments$).subscribe(result => console.log(result));
-  }
+  // racingApis() {
+  //   const posts$ = this.rxjsHttp.get('albums');
+  //   const comments$ = this.rxjsHttp.get('todos');
 
+  //   race(posts$, comments$).subscribe(result => console.log(result));
+  // }
 }
