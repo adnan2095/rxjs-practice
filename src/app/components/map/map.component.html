@@ -1,1 +1,20 @@
-<p>map works!</p>
+<div>
+    <h2 class="text-2xl font-bold mb-4">Map Operator</h2>
+    <app-list
+        [title]="'Original List'"
+        [marbles]="marbles"
+    ></app-list>
+    <app-usage-container
+        [tools]="tools"
+        [usageGuide]="usageDetails"
+        [usageCode]="'map(x => x * 3)'"
+        (emmitter)="transformMarbles()"
+    ></app-usage-container>
+    <br>
+    <ng-container *ngIf="beginExecution">
+        <app-list
+            [title]="'Transformed List'"
+            [marbles]="mappedMarbles"
+        ></app-list>
+    </ng-container>
+</div>

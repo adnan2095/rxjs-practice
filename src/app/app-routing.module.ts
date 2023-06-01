@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './structure/dashboard/dashboard.component';
+import { MapComponent } from './components/map/map.component';
+import { DashboardContentComponent } from './components/dashboard-content/dashboard-content.component';
 
 const routes: Routes = [
   {
-    component: DashboardComponent,
+    component: DashboardContentComponent,
     path: '',
+  },
+  {
+    component: MapComponent,
+    path: 'map'
   }
 ];
 

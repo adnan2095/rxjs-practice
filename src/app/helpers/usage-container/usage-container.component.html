@@ -1,0 +1,24 @@
+<div>
+    <h3 class="text-xl font-bold mb-4">Tools and Usage Details</h3>
+    <div class="flex space-x-4 mt-1">
+        <div class="border-black border-2 p-5 flex-1 items-center justify-center">
+            <p class="text-m mb-2">Operations used to achieve the simulation</p>
+            <div *ngFor="let tool of tools">
+                <p class="text-m mb-1 font-bold">{{tool.title}}</p>
+                <p class="text-sm mb-2">{{tool.content}}</p>
+            </div>
+            <br>
+            <div>
+                <p class="text-sm mt-10">Once ready, press the execute button to see how it works</p>
+                <div class="rounded-full bg-blue w-200 text-center cursor-pointer text-white px-3 py-1" (click)="transformMarbles()">Execute</div>    
+            </div>
+        </div>
+        <div class="border-black border-2 p-5 flex-1 items-center justify-center">
+            <p class="text-m mb-4">What is happening?</p>
+            <p class="text-sm mb-1">{{usageGuide}}</p>
+            <div class="border-black border-2 p-5 flex-1 items-center justify-center">
+                <p class="text-4xl bold p-5 text-center justify-center">{{usageCode}}</p>
+            </div>
+        </div>
+    </div>
+</div>

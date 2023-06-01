@@ -5,3 +5,36 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.marble-diagram {
+    position: relative;
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 10px solid black;
+    transform: translateY(-50%);
+  }
+  
+  .marbles-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .marble {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+  }
+  

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { concatMap, filter, from, interval, map, mergeMap, of, race, startWith, take, tap } from 'rxjs';
 import { RxjsHttpService } from 'src/app/services/rxjs-http.service';
 
@@ -18,7 +19,7 @@ export class DashboardComponent implements OnInit {
   selectedOption: string = 'Dashboard'
   posts: Post[] = [];
   takeLimit = 50;
-  constructor(public rxjsHttp: RxjsHttpService) { }
+  constructor(public rxjsHttp: RxjsHttpService, private router: Router) { }
 
   ngOnInit(): void {
     // this.rxjsHttp.get('posts').pipe(
@@ -41,6 +42,7 @@ export class DashboardComponent implements OnInit {
   switchView(newView: string) {
     if (this.selectedOption !== newView) {
       this.selectedOption = newView;
+      this.router.navigate([newView.toLowerCase()])
     }
   }
 
